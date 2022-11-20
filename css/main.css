@@ -1,0 +1,64 @@
+.container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip__title {
+    text-transform: uppercase;
+    font-size: 70px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.content {
+    position: absolute;
+    width: 400px;
+    background-color: bisque;
+    color: red;
+    padding: 20px;
+    top: -200%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden; 
+    opacity: 0;
+    transition: all 0.4s linear;
+}
+
+.content::before {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-color: bisque;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateY(50%) rotate(45deg);
+    content: "";
+}
+
+.tooltip__title:hover + .content {
+    visibility: visible;
+    opacity: 1;
+}
+
+.content__title {
+    text-align: center;
+}
+
+.content__desc {
+    line-height: 1.5;
+}
